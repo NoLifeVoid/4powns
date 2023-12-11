@@ -151,6 +151,7 @@ export class LogicService {
     }
     return false
   }
+  
   xOneToSixVertGameRedWins(): boolean {
 
     //checking for vertical 4 red coins x=n kinda type 
@@ -178,7 +179,7 @@ export class LogicService {
 
   yOneToSevenHorGameRedWins(): boolean {
 
-//checking for vertical 4 red coins y=n kinda type 
+//checking for horizontal 4 red coins y=n kinda type 
 
     for (let n = 0; n < 7; n++) {
       for (let m = 0; m < 6; m++) {
@@ -203,7 +204,7 @@ export class LogicService {
 
   yOneToSevenHorGameBlueWins(): boolean {
 
-//checking for vertical 4 blue coins y=n kinda type 
+//checking for horizontal 4 blue coins y=n kinda type 
 
     for (let n = 0; n < 7; n++) {
       for (let m = 0; m < 6; m++) {
@@ -229,11 +230,11 @@ export class LogicService {
 
 
   xyGameRedWins() {
-    //checking for rising red coins y=x kinda type
+  
     for (let n = 0; n < 7; n++) {
 
       for (let m = 0; m < 6; m++) {
-
+     //checking for rising red coins y=x kinda type
         try {
           if (
 
@@ -248,18 +249,8 @@ export class LogicService {
           // do nothing lol
         }
 
-
-      }
-    }
-
-
-
-    for (let n = 0; n < 7 - 2; n++) {
-
-      for (let m = 0; m < 6 - 1; m++) {
-
-        //checking for falling red coins y=-x kinda type
-        try {
+         //checking for falling red coins y=-x kinda type
+         try {
           if (
 
             this.board[n][m].equals(new Chip(Color.red)) &&
@@ -271,7 +262,7 @@ export class LogicService {
 
 
         } catch (error) {
-          continue
+          //do nothing lol
         }
 
 
@@ -285,11 +276,11 @@ export class LogicService {
 
   xyGameBlueWins() {
 
-     //checking for rising blue coins y=x kinda type
+     
     for (let n = 0; n < 7; n++) {
 
       for (let m = 0; m < 6; m++) {
-
+        //checking for rising blue coins y=x kinda type
         try {
           if (
 
@@ -304,17 +295,7 @@ export class LogicService {
           // do nothing lol
         }
 
-
-      }
-    }
-
-
-       //checking for rising blue coins y=-x kinda type
-    for (let n = 0; n < 7 - 2; n++) {
-
-      for (let m = 0; m < 6 - 1; m++) {
-
-
+        //checking for falling blue coins y=-x kinda type
         try {
           if (
 
@@ -327,12 +308,12 @@ export class LogicService {
 
 
         } catch (error) {
-          continue
+          //do nothing lol
         }
-
 
       }
     }
+
 
     return false
 
