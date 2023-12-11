@@ -1,0 +1,6 @@
+1)   install angular.io from angular.io
+2)   follow trhe instructions links.
+2.1) optionally set env-vars.
+3)   navigate into the front end folder
+4)   type: ng serve -o   
+5)   play the game

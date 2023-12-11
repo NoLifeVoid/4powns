@@ -1,0 +1,42 @@
+<div class="frame">
+
+  <div *ngIf="logic.won===false">
+              <div class="font" *ngIf="logic.even===true">It's the <span class="blue-font">blue</span> player's turn.</div>
+              <div class="font" *ngIf="logic.even===false">It's the <span class="red-font">red</span> player's turn.</div>
+  </div>
+  <div *ngIf="logic.won===true">
+              <div class="font" *ngIf="logic.blue===true">The <span class="blue-font">blue</span> player has won.</div>
+              <div class="font" *ngIf="logic.red===true">The <span class="red-font">red</span> player has won.</div>
+              
+  </div>
+
+  <br>
+
+        <div class="board">
+
+          <div *ngFor="let n of logic.buttons" class="stack">
+              <div *ngFor="let coin of logic.board[n]" class="field">
+                    <div *ngIf="coin.color===Color.red" class="red"></div>
+                    <div *ngIf="coin.color===Color.blue" class="blue"></div>
+              </div>
+          </div>
+          
+        </div>
+
+  <div class="btn-frame">
+    <button *ngFor="let b of logic.buttons" class="btn"
+      (click)="logic.act(b)">{{(b+1).toString()}}</button>
+  </div>
+
+  <br>
+
+  <div class="font">
+    <p>Not familiar with the game? Look it up on <a class="link" (click)="snapNewTab('https://de.wikipedia.org/wiki/Vier_gewinnt')"> Wikipedia</a> (opens a new tab)</p>
+
+    
+
+
+  </div>
+
+
+</div>
